@@ -1,0 +1,109 @@
+<fubon-qa block-page="index"></fubon-qa>
+<!-- begin navbar-->
+<div class="navbar">
+	<fubon-header></fubon-header>
+</div>
+<!-- end navbar-->
+<!-- begin toolbar-->
+<div class="toolbar toolbar-bottom">
+	<div class="toolbar toolbar-bottom footer">
+		<fubon-footer></fubon-footer>
+	</div>
+</div>
+<!-- end toolbar-->
+<!-- begin page content -->
+<div class="page-content">
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<fubon-timeline step="1"></fubon-timeline>
+			</div>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<form class="list-block inputs-list" id="formData">
+					<ul>
+						<li>
+							<div class="item-content">
+								<div class="item-inner {{vm.nameStyle}}">
+									<div class="item-title floating-label">身份證字號</div>
+									<div class="item-input item-input-field">
+										<input type="text" name="id" placeholder="" class="" ng-model="vm.inputName" disabled />
+									</div>
+								</div>
+							</div>
+						</li>
+						<li ng-if="vm.type1==true">
+							<div class="item-content">
+								<div class="item-inner {{vm.phoneStyle}}">
+									<div class="item-title floating-label">手機號碼</div>
+									<div class="item-input item-input-field">
+										<input type="tel" name="phone" placeholder="" class="" ng-model="vm.inputPhone" disabled />
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content item-clean">
+								<div class="item-inner {{vm.birthdayStyle}}">
+									<div class="item-title floating-label">請輸入出生年(民國)月日</div>
+									<div class="item-input item-input-field">
+										<input type="text" name="birthday" placeholder="" readonly id="calendar-default" ng-model="vm.calendarDefault" />
+									</div>
+								</div>
+								<button class="clean-button" ng-click="vm.cleanInput()"><i class="fa fa-times " aria-hidden="true"></i></button>
+							</div>
+						</li>
+						<li ng-if="vm.type2==true">
+							<div class="item-content item-clean">
+								<div class="col-100">
+									<div class="item-title item-title-top">最近半年內您是否有投保富邦人壽旅行平安險？</div>
+								</div>
+							</div>
+						</li>
+						<li ng-if="vm.type2==true">
+							<div class="row">
+								<div class="col-50" ng-click="vm.insurance('Y')">
+									<label class="label-radio item-content">
+                                                            <input type="radio" name="myRadio" value="Y" ng-click="vm.insurance('Y')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">曾經投保</span>
+                                                            </div>
+                                                        </label>
+								</div>
+								<div class="col-50" ng-click="vm.insurance('N')">
+									<label class="label-radio item-content">
+                                                            <input type="radio" name="myRadio" value="N" ng-click="vm.insurance('N')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">未曾投保</span>
+                                                            </div>
+                                                        </label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="buttons-row content-width">
+									<a href="#" class="button ripple button-fill  color-customize" ng-click="vm.login()">登入</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner triangle-content">
+									<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+									<span>建議使用Chrome/Safari瀏覽器瀏覽</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end page content -->

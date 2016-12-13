@@ -1,0 +1,271 @@
+// $headerfz:18px;
+
+/*$fz:16px;*/
+
+#peoplename .item-after {
+    height: 0px;
+}
+
+.peoplename:after {
+    height: 0px;
+}
+
+.toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: $headerfz;
+    .footer {
+        background-color: #E9F4F8;
+        color: #2A376A;
+        box-shadow: 0px -1px 1px rgba(8%, 8%, 8%, 0.3), 0px -2px 1px rgba(6%, 6%, 6%, 0.2);
+    }
+    a.link {
+        color: #2A376A;
+    }
+}
+
+.toolbar-inner {
+    background-color: #E9F4F8;
+}
+
+.open-popup {
+    right: 12px;
+    background-color: #1A94BB;
+    bottom: 60px;
+    img {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+.close-popup:after {
+    content: '返回';
+    margin: 0px 0 0 10px;
+    color: #2a376a;
+    font-size: $headerfz;
+}
+
+.page-content {
+    background-image: url('img/assets/airplaneBG.svg');
+    background-repeat: no-repeat;
+    background-size: 300px, 600px, auto;
+    background-position: center;
+}
+
+i.icon.icon-prev {
+    background-color: #2A376A;
+    border-radius: 50%;
+}
+
+i.icon.icon-next {
+    background-color: #2A376A;
+    border-radius: 50%;
+}
+
+i.fa.fa-2 {
+    font-size: 30px;
+}
+
+i.fa.fa-pencil-square-o {
+    padding-right: 25px;
+}
+
+i.fa.fa-user.fa-3 {
+    font-size: 60px;
+}
+
+.font-red {
+    color: #f00;
+}
+
+.font-green {
+    color: #12937f;
+}
+
+
+/*begin endPage*/
+
+.centerarea {
+    position: absolute;
+    top: 25vh;
+    padding: 0 10%;
+    .modal-title {
+        line-height: 30px;
+    }
+}
+
+#calendar-default {
+    font-size: $fz;
+}
+
+
+/*modal*/
+
+.modal-title {
+    font-size: $headerfz;
+}
+
+.modal {
+    font-size: $fz;
+}
+
+.modal-button,
+.modal-buttons .button {
+    font-size: $fz;
+}
+
+body {
+    font-size: $fz;
+}
+
+.chip {
+    font-size: $fz;
+}
+
+.navbar .center,
+.subnavbar .center {
+    font-size: $headerfz;
+}
+
+.dottedline {
+    border-top-style: dotted;
+    border-top-color: #9D9D9D;
+    padding: 20px 0;
+}
+
+
+/* copyData*/
+
+.copydata {
+    width: 55%;
+    text-align: right;
+    padding-right: 5px;
+    .bg_Black {
+        padding: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 12px;
+    }
+}
+
+.promptstyle {
+    padding: 0 16px 16px 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 50px;
+    ul {
+        list-style-type: square;
+        li {
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.checktable {
+    .item-title:nth-child(1) {
+        width: 50%;
+    }
+    .item-title:nth-child(2) {
+        margin-left: -5%;
+    }
+}
+
+.badge {
+    font-size: 16px;
+    p {
+        margin-left: 10px;
+    }
+}
+
+.badge-1 {
+    padding: 4px 3px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    margin-left: -30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.item-content-padding {
+    padding-left: 16px;
+}
+
+.triangle-content {
+    color: #555;
+    font-size: $fz;
+}
+
+.premiumtext {
+    height: 100%;
+    width: 100%;
+    border-left: 6px solid #75cecf;
+    background-color: #f0fefe;
+    margin-top: 20px;
+    padding-left: 10px;
+    margin-left: -15px;
+}
+
+// div.textalign {
+//     text-align: justify;
+//     text-justify: inter-ideograph;
+//     -ms-text-justify: inter-ideograph;
+//     /*IE9*/
+//     -moz-text-align-last: justify;
+//     /*Firefox*/
+//     -webkit-text-align-last: justify;
+//     /*Chrome*/
+// }
+// div.textalign:after {
+//     content: '';
+//     display: inline-block;
+//     width: 100%;
+// }
+// .textborder {
+//     border-style: solid;
+//     border-bottom-width: 1px;
+//     border-bottom-color: #cccccc;
+// }
+.content-block.s-content-block {
+    margin-bottom: -5px;
+}
+
+
+/*question*/
+
+.floating-button {
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+}
+
+.navbar .header .content p {
+    font-size: $headerfz;
+}
+
+.content-block-title {
+    font-size: $fz;
+}
+
+.finance-font-title {
+    color: #12937F;
+}
+
+.finance-font-content {
+    color: #666666;
+    text-align: left;
+}
+
+.incomestyle {
+    font-size: $fz;
+    border: 0px;
+    width: 120px;
+}

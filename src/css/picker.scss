@@ -1,0 +1,76 @@
+$width:100%;
+$pickerFz:22px;
+$bkColor:#E9F4F8;
+$color:#2A376A;
+.logodatecss {
+    width: $width/3;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: $pickerFz;
+    outline: 1px solid #ddd;
+}
+
+.startdatecss {
+    width: $width/4;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: $pickerFz;
+    outline: 1px solid #ddd;
+}
+
+.Insurance1_index {
+    width: $width;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid #ddd;
+}
+
+.Insurance2_index {
+    width: $width;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid #ddd;
+}
+
+.Insurance3_index {
+    width: $width;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid #ddd;
+}
+
+.companyname {
+    width: $width;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    outline: 1px solid #ddd;
+}
+
+.picker-modal .picker-header {
+    background-color: $bkColor;
+}
+
+.picker-calendar-month-picker {
+    background-color: $bkColor;
+    color: $color;
+}
+
+.picker-calendar-year-picker {
+    background-color: $bkColor;
+    color: $color;
+}
+
+.picker-calendar-selected-date {
+    color: $color;
+    font-size: $headerfz;
+}
+
+.picker-calendar-day.picker-calendar-day-selected span {
+    background-color: $color;
+}

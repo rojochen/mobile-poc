@@ -1,0 +1,28 @@
+/*$fz: 16px;*/
+
+$successtext:36px;
+.success-box {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.success-img {
+    width: 70%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.success-title-text {
+    color: #359DA1;
+    font-size: $successtext;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-content-text {
+    font-size: $fz;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}

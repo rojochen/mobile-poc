@@ -1,0 +1,140 @@
+<fubon-qa block-page="page2">
+</fubon-qa>
+<!-- begin navbar-->
+<div class="navbar">
+	<fubon-header></fubon-header>
+</div>
+<!-- end navbar-->
+<!-- begin toolbar-->
+<div class="toolbar toolbar-bottom">
+	<div class="toolbar toolbar-bottom footer">
+		<fubon-footer></fubon-footer>
+	</div>
+</div>
+<div class="page-content">
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<fubon-timeline step="2"></fubon-timeline>
+			</div>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<div class="list-block inputs-list">
+					<ul>
+						<li>
+							<div class="item-content item-clean">本次旅遊地點：</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-50" ng-click="vm.selectPlaySite('yes')">
+									<label class="label-radio item-content">
+                                                            <input type="radio" name="isGoAbroad" value="yes" ng-click="vm.selectPlaySite('yes')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">國外旅遊</span>
+                                                            </div>
+                                                        </label>
+								</div>
+								<div class="col-50" ng-click="vm.selectPlaySite('no')">
+									<label class="label-radio item-content">
+                                                            <input type="radio" name="isGoAbroad" value="no" ng-click="vm.selectPlaySite('no')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">國內旅遊</span>
+                                                            </div>
+                                                        </label>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="item-link {{vm.isDisabled}}" ng-click="vm.goPlayLocation($event)">
+								<div class="item-content">
+									<div class="item-inner" ng-class="{'not-empty-state': vm.selectPlayList.length >= 1}">
+										<div class="item-title floating-label">旅遊地點</div>
+										<div class="item-input-area item-input-field">
+											<div class="list-area">
+												<div class="" ng-if="vm.selectPlayList.length >= 1">
+													<span ng-repeat="x in vm.selectPlayList">
+																	<div class="chip">
+																	<div class="chip-label" ng-bind="x.locationName"></div>
+																	<span  class="chip-delete" ng-if="vm.delPlayLocation" ng-click="vm.playListDelete(x, $index)"></span>
+												</div>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+				</div>
+				</a>
+				</li>
+				<li>
+					<a href="#" class="item-link" ng-click="vm.goInsured($event)">
+						<div class="item-content" id="peopleName">
+							<div class="item-inner" ng-class="{'not-empty-state': vm.peopleName.length >= 1}">
+								<div class="item-title floating-label">被保險人</div>
+								<div class="item-input-area item-input-field">
+									<div class="list-area">
+										<div class="" ng-if="vm.peopleName.length >= 1">
+											<span ng-repeat="x in vm.peopleName track by $index">
+ 
+																			<div class="chip">
+																				<div class="chip-label" ng-bind="x.name"></div>
+																				<span  class="chip-delete" ng-click="vm.chipDelete(x,$event)"></span>
+										</div>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="item-after" ng-show="false"></div>
+						</div>
+			</div>
+			</a>
+			</li>
+			<li>
+				<div class="item-content item-clean">
+					<div class="item-inner {{vm.startDateStyle}}">
+						<div class="item-title floating-label">投保開始時間(年-月-日-時)</div>
+						<div class="item-input item-input-field">
+							<input type="text" name="startDate" placeholder="" readonly id="startDate" ng-model="vm.startDate" ng-blur="vm.blur('startDate')">
+						</div>
+					</div>
+					<button class="clean-button" ng-click="vm.cleanInput('startDate')"><i class="fa fa-times " aria-hidden="true"></i></button>
+				</div>
+			</li>
+			<li>
+				<div class="item-content item-clean">
+					<div class="item-inner">
+						<div class="item-title floating-label">投保天數(一日以24小時計算)</div>
+						<div class="item-input item-input-field">
+							<input type="tel" name="days" placeholder="" id="days" ng-model="vm.days" ng-blur="vm.blur('days')">
+						</div>
+					</div>
+					<button class="clean-button" ng-click="vm.cleanInput('days')"><i class="fa fa-times " aria-hidden="true"></i></button>
+				</div>
+			</li>
+			<li>
+				<div class="item-content disabled">
+					<div class="item-inner {{vm.endDateStyle}}">
+						<div class="item-title floating-label">投保結束時間</div>
+						<div class="item-input item-input-field">
+							<input type="text" name="endDate" placeholder="" readonly id="endDate" ng-model="vm.endDate">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="row item-content">
+					<div class="buttons-row content-width">
+						<a href="#" class="button  button-fill  color-customize" ng-click="vm.goStap3()">下一步</a>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+</div>

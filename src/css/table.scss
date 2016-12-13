@@ -1,0 +1,40 @@
+table.table-style{
+    width: calc(100% - 14px);
+	border-collapse: collapse;
+	border-spacing: 0;
+    margin-left: 14px;
+    thead tr th, tbody tr td{
+        border-bottom-color: rgb(240, 240, 240);
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+    }
+    thead {
+        // display: table-caption;
+        tr th {
+            font-weight: 500;
+		    padding: 7px 0;
+            &:first-child{
+                text-align: left;
+            }
+            &:last-child{
+			    text-align: left;
+            }
+        }
+    }
+    tbody tr td{
+        // width:39%;
+        &:first-child{
+            width:32%;
+        }
+        &:last-child{
+            width:32%;
+			text-align: right;
+        }
+        .td-after{
+            color: #757575;
+        }
+    }
+    input[type=tel]{
+        text-align: center; 
+    }
+} 

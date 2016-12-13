@@ -1,0 +1,23 @@
+<div class="timeline">
+    <ul>
+        <li class="timelineicon">
+            <img src="img/01.svg" alt="身份檢核" />
+            <p>身份檢核</p>
+        </li>
+        <li class="timelineline" ng-class="{'timelineafter': vm.step <= 1}"></li>
+        <li class="timelineicon" ng-class="{'timelineafter': vm.step <= 1}">
+            <img src="img/02.svg" alt="填寫資料" />
+            <p>填寫資料</p>
+        </li>
+        <li class="timelineline" ng-class="{'timelineafter': vm.step <= 2}"></li>
+        <li class="timelineicon" ng-class="{'timelineafter': vm.step <= 2}">
+            <img src="img/03.svg" alt="試算保費" />
+            <p>試算保費</p>
+        </li>
+        <li class="timelineline" ng-class="{'timelineafter': vm.step <= 3}"></li>
+        <li class="timelineicon" ng-class="{'timelineafter': vm.step <= 3}">
+            <img src="img/04.svg" alt="確認申請" />
+            <p>確認申請</p>
+        </li>
+    </ul>
+</div>

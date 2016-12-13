@@ -1,0 +1,96 @@
+<div class="page-content backgroundnone">
+    <div class="protection">
+        <div class="list-block accordion-list inset">
+            <ul>
+                <li class="accordion-item comdashed confirmBlue" ng-repeat="x in vm.selectPeopleData track by $index" ng-class="{'accordion-item-expanded':$index==0}">
+                    <a href="#" class="item-link  no-ripple">
+                        <div class="row item-inner">
+                            <div class="comimg col-20">
+                                <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMy4zMiA1MTMuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMy4zMiA1MTMuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNDYuNDkxLDMxNi41NDdjNDkuMTkzLTI5Ljk0NCw4MS4yNzUtODMuNDE0LDgxLjI3NS0xNDUuNDRDNDI3Ljc2Nyw3Ni45OTgsMzUwLjc2OCwwLDI1Ni42NiwwICAgIFM4NS41NTMsNzYuOTk4LDg1LjU1MywxNzEuMTA3YzAsNjIuMDI2LDMyLjA4MiwxMTUuNDk3LDgxLjI3NSwxNDUuNDRDODEuMjc1LDM0OC42MywxNy4xMSw0MjMuNDg5LDAsNTEzLjMyaDQyLjc3NyAgICBjMjEuMzg4LTk4LjM4NiwxMDkuMDgxLTE3MS4xMDcsMjEzLjg4My0xNzEuMTA3czE5Mi40OTUsNzIuNzIsMjEzLjg4MywxNzEuMTA3aDQyLjc3NyAgICBDNDk2LjIxLDQyMS4zNSw0MzIuMDQ1LDM0Ni40OTEsMzQ2LjQ5MSwzMTYuNTQ3eiBNMTI4LjMzLDE3MS4xMDdjMC03MC41ODEsNTcuNzQ5LTEyOC4zMywxMjguMzMtMTI4LjMzICAgIHMxMjguMzMsNTcuNzQ5LDEyOC4zMywxMjguMzNzLTU3Ljc0OSwxMjguMzMtMTI4LjMzLDEyOC4zM1MxMjguMzMsMjQxLjY4OCwxMjguMzMsMTcxLjEwN3oiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
+                                />
+                            </div>
+                            <div class="col-80">
+                                <div class="item-content comheight nopadd">
+                                    <div class="col-50">被保險人:</div>
+                                    <div class="col-50 textright" ng-bind="x.insuredName"></div>
+                                </div>
+                                <div class="item-content comheight nopadd">
+                                    <div class="col-80">身分證號末三碼:</div>
+                                    <div class="col-30 textright" ng-bind="x.lastCode"></div>
+                                </div>
+                                <div class="item-content comheight nopadd">
+                                    <div class="col-60 ">保費:</div>
+                                    <div class="col-40 textright" ng-bind="x.fee"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="accordion-item-content">
+                        <div class="content-block nopadd">
+                            <div class="item-content nopadd">
+                                <div class="col-60">意外身故及殘障保險</div>
+                                <div class="col-40 textright" ng-bind="x.qADDFee"></div>
+                            </div>
+                            <div class="item-content nopadd">
+                                <div class="col-60">傷害醫療保險</div>
+                                <div class="col-40 textright" ng-bind="x.qMRFee"></div>
+                            </div>
+                            <div class="item-content nopadd">
+                                <div class="col-60">海外突發疾病醫療險</div>
+                                <div class="col-40 textright" ng-bind="x.qOHS1Fee"></div>
+                            </div>
+                            <div class="item-content nopadd">
+                                <div class="col-60">每日門診限額</div>
+                                <div class="col-40 textright" ng-bind="x.dailyOutpatientQuota"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--<li id="ccc">
+            </li>-->
+            </ul>
+            <div class="row">
+                <div class="col-100 nopadd">
+                    <div class="item-content">
+                        <div class="col-50">
+                            總保費
+                        </div>
+                        <div class="col-50 textright">{{vm.feeTotal+'元'}}
+                        </div>
+                    </div>
+                    <div class="item-content item-clean">
+                        <div class="col-100">
+                            <div class="item-title item-title-top blue-window-text">
+                                <i class="fa fa-circle" style="font-size:14px" aria-hidden="true"></i> 依投保規則，載明注意事項，以明顯顏色顯示
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content item-clean">
+                        <div class="col-100">
+                            <div class="item-title item-title-top blue-window-text"><i class="fa fa-circle" style="font-size:14px" aria-hidden="true"></i> 投保年齡未滿15足歲：(被保人姓名)未滿15足歲，僅有殘廢保險金，無身故保</div>
+                        </div>
+                    </div>
+                    <div class="item-content item-clean">
+                        <div class="col-100">
+                            <div class="item-title item-title-top blue-window-text">
+                                <i class="fa fa-circle" style="font-size:14px" aria-hidden="true"></i> 投保年齡限制：依投保年齡顯示投保上限，如(被保人姓名)未滿15足歲，最高投保金額為200萬殘廢保險金</div>
+                        </div>
+                    </div>
+                    <div class="item-content" ng-if="vm.button==1">
+                        <div class="col-50">
+                            <a href="#" class="button color-white com-border" ng-click="vm.backStep3()">修改</a>
+                        </div>
+                        <div class="col-50">
+                            <a href="#" class="button color-white com-border" ng-click="vm.goStep4()">完成</a>
+                        </div>
+                    </div>
+                    <div class="item-content " ng-if="vm.button==2">
+                        <div class="col-100">
+                            <a href="#" class="button  com-border  comButton color-white" ng-click="vm.backStep4()">返回</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

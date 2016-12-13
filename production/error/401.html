@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" ng-app="fubon.ta.callin.app" ng-strict-di>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"
+	/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>富邦旅平險專案</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/main.css" data-th-href="@{css/main.css}" />
+	<!-- Scripts -->
+	<script th:inline="javascript" type="text/javascript">
+	  window.$$API_PATH = '';
+	  //<![CDATA[
+	  window.$$API_PATH = [[@{/}]];
+	  //]]>
+	</script>
+	<script src="js/assets/app.js" data-th-src="@{js/assets/app.js}"></script>
+	<script src="js/controller/main.js" data-th-src="@{js/controller/main.js}"></script>
+	<script src="js/component/dist/component.min.js" data-th-src="@{js/component/dist/component.min.js}"></script>
+</head>
+
+<body ng-controller="aaPageController">
+	<div class="views tabs">
+		<!--index-->
+		<div class="view view-main tab active">
+			<div class="pages">
+				<!--errorCreditcard-->
+				<fubon-error-creditcard data-page="errorCreditcard" class="page cached toolbar-fixed">
+					<div class="row ">
+						<div class="error-title-text col-100 ">申請失敗!</div>
+					</div>
+					<div class="error-content-text col-100 ">
+						很抱歉，信用卡授權失敗。
+						<font class="bodycolor">無法完成您的線上申請</font>，請與信用卡公司聯繫或請撥打客服專線
+						<a class="telbtn " onclick="location.href='tel:0809001688' "> <i class="fa fa-phone " aria-hidden="true "></i> 0809-001-688</a> 將優先由專人替您服務
+					</div>
+				</fubon-error-creditcard>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

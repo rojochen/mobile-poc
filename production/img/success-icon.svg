@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>success-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="success-icon" stroke="#359DA1">
+            <g id="Group-2" transform="translate(4.000000, 4.000000)">
+                <g id="Group">
+                    <g id="Group-3">
+                        <ellipse id="Oval-12" stroke-width="2" cx="31.6903846" cy="31.7326159" rx="31.6903846" ry="31.7326159"></ellipse>
+                        <path d="M27.2116638,40.6168482 L19.3821768,32.9051294 C18.8726077,32.4032459 18.8726077,31.5896935 19.3821768,31.0878101 C19.8917459,30.5859266 20.7180831,30.5859266 21.2273259,31.0878101 L28.1342384,37.8905479 L42.8706379,23.3764126 C43.380207,22.8745291 44.2065441,22.8745291 44.715787,23.3764126 C45.2253561,23.878296 45.2253561,24.6921698 44.715787,25.1940532 L29.0568129,40.6168482 C28.8121415,40.8578293 28.480367,40.9931001 28.1342384,40.9931001 C27.7881098,40.9931001 27.4563353,40.8578293 27.2116638,40.6168482 Z" id="Shape" fill="#359DA1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

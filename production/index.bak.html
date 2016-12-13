@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html ng-app="fubon.ta.callin.app">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>富邦旅平險專案-prototype</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/main.css">
+	<!-- Scripts -->
+	<script src="js/assets/app.js"></script>
+	<script src="js/controller/main.js"></script>
+	<script src="js/controller/IndexController.js"></script>
+	<script src="js/component/header.js"></script>
+	<script src="js/component/footer.js"></script>
+	<script src="js/component/timeline.js"></script>
+	<script src="js/component/linkQa.js"></script>
+	<script src="js/component/qa.js"></script>
+	<script src="js/component/fubonSuccess.js"></script>
+	<script src="js/component/fubonError.js"></script>
+	<script src="js/component/fubonErrorCreditcard.js"></script>
+	<!--<script src="js/component/fubonStep3.js"></script>-->
+	<!--<script src="js/component/checkInsurance.js"></script>-->
+	<!--<script src="js/component/fubonTaConfirmModal.js"></script>-->
+</head>
+
+<body ng-controller="aaPageController">
+	<div class="views tabs">
+		<!--index-->
+		<div class="view view-main tab active">
+			<div class="pages">
+				<!--page1-->
+				<div data-page="index" class="page navbar-fixed toolbar-fixed">
+					<fubon-qa on-page="index" block-page="blockPage"></fubon-qa>
+					<!-- begin navbar-->
+					<div class="navbar">
+						<fubon-header></fubon-header>
+					</div>
+					<!-- end navbar-->
+					<!-- begin toolbar-->
+					<div class="toolbar toolbar-bottom">
+						<div class="toolbar toolbar-bottom footer">
+							<fubon-footer></fubon-footer>
+						</div>
+					</div>
+					<!-- end toolbar-->
+					<!-- begin page content -->
+					<div class="page-content">
+						<div class="content-block">
+							<div class="row">
+								<div class="col-100">
+									<fubon-timeline step="1"></fubon-timeline>
+								</div>
+							</div>
+						</div>
+						<div class="content-block">
+							<div class="row">
+								<div class="col-100">
+									<form class="list-block inputs-list" id="formData">
+										<ul>
+											<li>
+												<div class="item-content">
+													<div class="item-inner {{nameStyle}}">
+														<div class="item-title floating-label">身份證字號</div>
+														<div class="item-input item-input-field">
+															<input type="text" name="id" placeholder="" class="" ng-model="inputName" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="item-content">
+													<div class="item-inner {{phoneStyle}}">
+														<div class="item-title floating-label">手機號碼</div>
+														<div class="item-input item-input-field">
+															<input type="tel" name="phone" placeholder="" class="" ng-model="inputPhone" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="item-content item-clean">
+													<div class="item-inner {{calendarDefaultStyle}}">
+														<div class="item-title floating-label">請輸入出生年月日</div>
+														<div class="item-input item-input-field">
+															<input type="text" name="birthday" placeholder="" readonly id="calendar-default" ng-model="calendarDefault" />
+														</div>
+													</div>
+													<button class="clean-button" ng-click="cleanInput('birthday')"><i class="fa fa-times " aria-hidden="true"></i></button>
+												</div>
+											</li>
+											<li>
+												<div class="item-content   item-clean">
+													<div class="col-100">
+														<div class="item-title item-title-top">最近半年內您是否有投保富邦人壽旅行平安險？</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="row">
+													<div class="col-50">
+														<label class="label-radio item-content">
+                                                            <input type="radio" name="my-radio" value="yes" ng-model="insurance">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">曾經投保</span>
+                                                            </div>
+                                                        </label>
+													</div>
+													<div class="col-50">
+														<label class="label-radio item-content">
+                                                            <input type="radio" name="my-radio" value="no" ng-model="insurance">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">未曾投保</span>
+                                                            </div>
+                                                        </label>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="item-content">
+													<div class="buttons-row content-width">
+														<a href="#" class="button ripple button-fill  color-customize" ng-click="login()">登入</a>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="item-content">
+													<div class="item-inner triangle-content">
+														<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+														<span>建議使用Chrome/Safari瀏覽器瀏覽</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end page content -->
+				</div>
+				<!--page2-->
+				<div data-page="page2" class="page cached navbar-fixed toolbar-fixed">
+					<fubon-qa on-page="page2" block-page="blockPage"></fubon-qa>
+					<!-- begin navbar-->
+					<div class="navbar">
+						<fubon-header></fubon-header>
+					</div>
+					<!-- end navbar-->
+					<!-- begin toolbar-->
+					<div class="toolbar toolbar-bottom">
+						<div class="toolbar toolbar-bottom footer">
+							<fubon-footer></fubon-footer>
+						</div>
+					</div>
+					<div class="page-content">
+						<div class="content-block">
+							<div class="row">
+								<div class="col-100">
+									<fubon-timeline step="2"></fubon-timeline>
+								</div>
+							</div>
+						</div>
+						<div class="content-block">
+							<div class="row">
+								<div class="col-100">
+									<div class="list-block inputs-list">
+										<ul>
+											<li>
+												<div class="item-content item-clean">本次旅遊地點：</div>
+											</li>
+											<li>
+												<div class="row">
+													<div class="col-50" ng-click="selectPlaySite('yes')">
+														<label class="label-radio item-content">
+                                                            <input type="radio" name="isGoAbroad" value="yes" ng-click="selectPlaySite('yes')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">國外旅遊</span>
+                                                            </div>
+                                                        </label>
+													</div>
+													<div class="col-50" ng-click="selectPlaySite('no')">
+														<label class="label-radio item-content">
+                                                            <input type="radio" name="isGoAbroad" value="no" ng-click="selectPlaySite('no')">
+                                                            <div class="item-media">
+                                                                <i class="icon icon-form-radio"></i>
+                                                                <span class="span-margin-12">國內旅遊</span>
+                                                            </div>
+                                                        </label>
+													</div>
+												</div>
+											</li>
+											<li>
+												<a href="#" class="item-link {{isDisabled}}" ng-click="goPlayLocation($event)">
+													<div class="item-content">
+														<div class="item-inner" ng-class="{'not-empty-state': selectPlayList.length >= 1}">
+															<div class="item-title floating-label">旅遊地點</div>
+															<div class="item-input-area item-input-field">
+																<div class="list-area">
+																	<div class="" ng-if="selectPlayList.length >= 1">
+																		<span ng-repeat="x in selectPlayList">
+																	<div class="chip">
+																	<div class="chip-label" ng-bind="x.chau"></div>
+																	<span  class="chip-delete" ng-if="delPlayLocation" ng-click="playListDelete(x,$event)"></span>
+																	</div>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+									</div>
+									</a>
+									</li>
+									<li>
+										<a href="#" class="item-link" ng-click="goInsured($event)">
+											<div class="item-content" id="peopleName">
+												<div class="item-inner" ng-class="{'not-empty-state': peopleName.length >= 1}">
+													<div class="item-title floating-label">被保險人</div>
+													<div class="item-input-area item-input-field">
+														<div class="list-area">
+															<div class="" ng-if="peopleName.length >= 1">
+																<span ng-repeat="x in peopleName track by $index">
+ 
+																			<div class="chip">
+																				<div class="chip-label" ng-bind="x.name"></div>
+																				<span  class="chip-delete" ng-click="chipDelete(x,$event)"></span>
+															</div>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="item-after" ng-show="false"></div>
+											</div>
+								</div>
+								</a>
+								</li>
+								<li>
+									<div class="item-content item-clean">
+										<div class="item-inner {{startDateStyle}}">
+											<div class="item-title floating-label">投保開始時間(年-月-日-時)</div>
+											<div class="item-input item-input-field">
+												<input type="text" name="startDate" placeholder="" readonly id="startDate" ng-model="startDate" ng-blur="blur('startDate')">
+											</div>
+										</div>
+										<button class="clean-button" ng-click="cleanInput('startDate')"><i class="fa fa-times " aria-hidden="true"></i></button>
+									</div>
+								</li>
+								<li>
+									<div class="item-content item-clean">
+										<div class="item-inner">
+											<div class="item-title floating-label">投保天數(一日以24小時計算)</div>
+											<div class="item-input item-input-field">
+												<input type="tel" name="days" placeholder="" id="days" ng-model="days" ng-blur="blur('days')">
+											</div>
+										</div>
+										<button class="clean-button" ng-click="cleanInput('days')"><i class="fa fa-times " aria-hidden="true"></i></button>
+									</div>
+								</li>
+								<li>
+									<div class="item-content disabled">
+										<div class="item-inner {{endDateStyle}}">
+											<div class="item-title floating-label">投保結束時間</div>
+											<div class="item-input item-input-field">
+												<input type="text" name="endDate" placeholder="" readonly id="endDate" ng-model="endDate">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="row item-content">
+										<div class="buttons-row content-width">
+											<a href="#" class="button  button-fill  color-customize" ng-click="goStap3()">下一步</a>
+										</div>
+									</div>
+								</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--playLocation-->
+		<div data-page="playLocation" class="page cached">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+						<a href="#" ng-click="backLaction('playToStap2')" class="link close-popup icon-only">
+							<i class="icon icon-back"></i>
+						</a>
+					</div>
+					<div class="center sliding">國外旅遊地點</div>
+					<div class="right"></div>
+				</div>
+			</div>
+			<div class="toolbar">
+				<div class="toolbar toolbar-bottom footer">
+					<div class="toolbar-inner">
+						<div></div>
+						<div>&copy; 2016 富邦人壽版權所有
+						</div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="content-block-title">已選地點（請選擇主要旅遊地區）</div>
+				<div class="content-block">
+					<div class="chip" ng-repeat="x in selectPlayList" style="margin-right:4px">
+						<div class="chip-media bg-blue"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+						<div class="chip-label" ng-bind="x.chau"></div>
+						<a class="chip-delete" ng-click="playListDelete(x)"></a>
+					</div>
+				</div>
+				<div class="list-block s-list-block">
+					<ul>
+						<li ng-repeat="x in locationData">
+							<label class="label-checkbox item-content" ng-click="selectLocation(x)">
+								<input type="checkbox" name="{{x.chau}}" value="{{x.chau}}" ng-checked="x.checked" ng-click="selectLocation(x)">
+								<div class="item-media">
+									<i class="icon icon-form-checkbox"></i>
+								</div>
+								<div class="item-inner">
+									<div class="item-title" ng-bind="x.chau"></div>
+								</div>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="list-block promptstyle">
+					<ul>
+						<li ng-repeat="x in promptText track by $index" ng-bind="x"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--Insured-->
+		<div data-page="Insured" class="page cached">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+						<a href="#" ng-click="backLaction('peopleToStap2')" class="link close-popup icon-only">
+							<i class="icon icon-back"></i>
+						</a>
+					</div>
+					<div class="center sliding">被保險人</div>
+					<div class="right"></div>
+				</div>
+			</div>
+			<div class="toolbar">
+				<div class="toolbar toolbar-bottom footer">
+					<div class="toolbar-inner">
+						<div></div>
+						<div>&copy; 2016 富邦人壽版權所有
+						</div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="list-block">
+					<ul>
+						<li>
+							<label class="item-content">
+								<div class="item-media">
+								</div>
+								<div class="item-inner peopleColStyle">
+									<div>姓名</div>
+									<div>生日年</div>
+									<div>身分證號<br/>末三碼</div>
+								</div>
+							</label>
+						</li>
+						<li ng-repeat="x in peopleData track by $index">
+							<label class="label-checkbox item-content" ng-click="selectPeople(x)">
+								<input type="checkbox" name="{{x.name}}" value="{{x.name}}" ng-checked="x.checked" ng-click="selectPeople(x)">
+								<div class="item-media">
+									<i class="icon icon-form-checkbox"></i>
+								</div>
+								<div class="item-inner peopleColStyle">
+									<div ng-bind="x.name"></div>
+									<div ng-bind="x.birthday"></div>
+									<div ng-bind="x.id"></div>
+								</div>
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--page3-->
+		<div data-page="page3" class="page cached navbar-fixed toolbar-fixed {{blurry}}">
+			<fubon-qa on-page="page3" block-page="blockPage"></fubon-qa>
+			<!-- begin navbar-->
+			<div class="navbar">
+				<fubon-header></fubon-header>
+			</div>
+			<!-- end navbar-->
+			<!-- begin toolbar-->
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar toolbar-bottom footer">
+					<fubon-footer></fubon-footer>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="content-block ">
+					<div class="row ">
+						<div class="col-100 ">
+							<fubon-timeline step="3 "></fubon-timeline>
+						</div>
+					</div>
+				</div>
+				<div class="content-block ">
+					<div class="row ">
+						<div class="col-100 ">
+							<div class="list-block inputs-list ">
+								<ul>
+									<div ng-repeat="x in selectPeopleData track by $index " class="dottedline">
+										<li>
+											<div class="item-content ">
+												<div class="item-media"><img class="peopleimg " src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMy4zMiA1MTMuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMy4zMiA1MTMuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNDYuNDkxLDMxNi41NDdjNDkuMTkzLTI5Ljk0NCw4MS4yNzUtODMuNDE0LDgxLjI3NS0xNDUuNDRDNDI3Ljc2Nyw3Ni45OTgsMzUwLjc2OCwwLDI1Ni42NiwwICAgIFM4NS41NTMsNzYuOTk4LDg1LjU1MywxNzEuMTA3YzAsNjIuMDI2LDMyLjA4MiwxMTUuNDk3LDgxLjI3NSwxNDUuNDRDODEuMjc1LDM0OC42MywxNy4xMSw0MjMuNDg5LDAsNTEzLjMyaDQyLjc3NyAgICBjMjEuMzg4LTk4LjM4NiwxMDkuMDgxLTE3MS4xMDcsMjEzLjg4My0xNzEuMTA3czE5Mi40OTUsNzIuNzIsMjEzLjg4MywxNzEuMTA3aDQyLjc3NyAgICBDNDk2LjIxLDQyMS4zNSw0MzIuMDQ1LDM0Ni40OTEsMzQ2LjQ5MSwzMTYuNTQ3eiBNMTI4LjMzLDE3MS4xMDdjMC03MC41ODEsNTcuNzQ5LTEyOC4zMywxMjguMzMtMTI4LjMzICAgIHMxMjguMzMsNTcuNzQ5LDEyOC4zMywxMjguMzNzLTU3Ljc0OSwxMjguMzMtMTI4LjMzLDEyOC4zM1MxMjguMzMsMjQxLjY4OCwxMjguMzMsMTcxLjEwN3oiIGZpbGw9IiMwZDc4OWIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K "
+													/>
+												</div>
+												<div class="item-inner not-empty-state disabled ">
+													<div class="item-title floating-label">被保險人姓名</div>
+													<div class="item-input item-input-field peoplename">
+														<input type="text" name="peopleName" placeholder="" class="" ng-model="x.peopleName ">
+													</div>
+												</div>
+												<div class="copydata " ng-if="$index !==0 ">
+													<span class="badge-1 bg-green" ng-click="copyData($index)">同前位被保險人</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="item-content item-clean">
+												<div class="item-inner {{x.Insurance1_style}}">
+													<div class="item-title floating-label">意外身故及殘廢保額
+														<span class="font-red">(ADD)</span>
+													</div>
+													<div class="item-input item-input-field">
+														<input type="text" name="Insurance1" placeholder="" readonly class="Insurance1_{{$index}}" ng-model="x.Insurance1">
+													</div>
+												</div>
+												<button class="clean-button" ng-click="cleanInsurance( 'Insurance1', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>
+											</div>
+										</li>
+										<li>
+											<div class="item-content item-clean">
+												<div class="item-inner {{x.Insurance2_style}}">
+													<div class="item-title floating-label">傷害醫療保額
+														<span class="font-red">(MR)</span></div>
+													<div class="item-input item-input-field ">
+														<input type="text" name="Insurance2" placeholder="" readonly class="Insurance2_{{$index}}" ng-model="x.Insurance2">
+													</div>
+												</div>
+												<button class="clean-button" ng-click="cleanInsurance('Insurance2', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>
+											</div>
+										</li>
+										<li>
+											<div class="item-content item-clean">
+												<div class="item-inner {{x.Insurance3_style}}">
+													<div class="item-title floating-label">海外突發疾病醫療保額<span class="font-red">(OHS1)</span></div>
+													<div class="item-input item-input-field">
+														<input type="text" name="Insurance3" placeholder="" readonly class="Insurance3_{{$index}}" ng-model="x.Insurance3">
+													</div>
+												</div>
+												<button class="clean-button" ng-click="cleanInsurance('Insurance3', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>
+											</div>
+										</li>
+									</div>
+									<li>
+										<div class="item-content row ">
+											<div class="col-50 ">
+												<div class="buttons-row ">
+													<a href="# " class="button button-fill color-customize " ng-click="backStep2()">上一步</a>
+												</div>
+											</div>
+											<div class="col-50 ">
+												<div class="buttons-row ">
+													<a href="# " class="button button-fill color-customize " ng-click="compute()">試算保費</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="item-content row ">
+											<div class="col-100 ">
+												<div class="buttons-row ">
+													<a href="# " class="button button-fill color-customize" style="background:#999;" ng-click="goCheckInsurance()">財務核保</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--checkInsurance-->
+		<div data-page="checkInsurance" class="page cached">
+			<!-- begin navbar-->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+						<a href="#" ng-click="backPage3()" class="link close-popup icon-only">
+							<i class="icon icon-back"></i>
+						</a>
+					</div>
+					<div class="center sliding">財務核保</div>
+					<div class="right"></div>
+				</div>
+			</div>
+			<!-- end navbar-->
+			<!-- begin toolbar-->
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar toolbar-bottom footer">
+					<fubon-footer></fubon-footer>
+				</div>
+			</div>
+			<!-- end toolbar-->
+			<!-- begin page content -->
+			<div class="page-content">
+				<div class="content-block">
+					<div class="row">
+						<div class="col-100">
+							<div class="list-block inputs-list">
+								<ul>
+									<li>
+										<div class="item-content item-clean">
+											<div class="premiumtext">
+												<p>被保險人在三個月內於同業有投保紀錄，依規定需完成被保險人年收入調查後方可投保</p>
+											</div>
+										</div>
+										<div class="item-content item-clean">
+											<div class="premiumtext">
+												<p class="font-red">若該被保險人未成年或無個人年收入，請填寫家庭年收入。</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="list-block">
+								<table class="table-style">
+									<thead>
+										<tr class="font-green">
+											<th>被保險人</th>
+											<th>年收入(萬)</th>
+											<th>最高可投<br/>保金額(萬)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="x in playData.PeopleData track by $index">
+											<td ng-bind="x.peopleName"></td>
+											<td>
+												<input type="tel" name="income" placeholder="輸入年收入" id="income" ng-model="x.income" ng-blur="blurIncome(x)">
+											</td>
+											<td class="td-after" ng-bind="x.maxMoney"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--<div class="list-block sortable">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title font-green">被保險人</div>
+												<div class="item-title font-green">年收入(單位：萬元)</div>
+												<div class="item-title font-green">最高可投保金額(單位：萬元)</div>
+											</div>
+										</div>
+										<div class="sortable-handler"></div>
+									</li>
+									<li ng-repeat="x in playData.PeopleData track by $index">
+										<div class="item-content checktable">
+											<div class="item-inner">
+												<div class="item-title" ng-bind="x.peopleName"></div>
+												<div class="item-title">
+													<input type="tel" name="income" placeholder="請輸入年收入" id="income" ng-model="x.income" ng-blur="blurIncome(x)">
+												</div>
+												<div class="item-after" ng-bind="x.maxMoney">
+												</div>
+											</div>
+										</div>
+										<div class="sortable-handler"></div>
+									</li>
+									<li>
+										<div class="item-content row">
+											<div class="col-100">
+												<div class="buttons-row buttonMargin">
+													<a href="#" class="button button-fill color-customize" ng-click="completeCheck()">完成</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page content -->
+		</div>
+		<!--black-->
+		<div data-page="black" class="page cached block-style">
+			<div class="page-content backgroundnone">
+				<div class="list-block accordion-list inset">
+					<ul>
+						<li class="accordion-item comdashed" ng-repeat="x in selectPeopleData track by $index" ng-class="{'accordion-item-expanded':$index==0}">
+							<a href="#" class="item-link no-ripple">
+								<div class="row item-inner">
+									<div class="comimg col-20">
+										<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMy4zMiA1MTMuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMy4zMiA1MTMuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNDYuNDkxLDMxNi41NDdjNDkuMTkzLTI5Ljk0NCw4MS4yNzUtODMuNDE0LDgxLjI3NS0xNDUuNDRDNDI3Ljc2Nyw3Ni45OTgsMzUwLjc2OCwwLDI1Ni42NiwwICAgIFM4NS41NTMsNzYuOTk4LDg1LjU1MywxNzEuMTA3YzAsNjIuMDI2LDMyLjA4MiwxMTUuNDk3LDgxLjI3NSwxNDUuNDRDODEuMjc1LDM0OC42MywxNy4xMSw0MjMuNDg5LDAsNTEzLjMyaDQyLjc3NyAgICBjMjEuMzg4LTk4LjM4NiwxMDkuMDgxLTE3MS4xMDcsMjEzLjg4My0xNzEuMTA3czE5Mi40OTUsNzIuNzIsMjEzLjg4MywxNzEuMTA3aDQyLjc3NyAgICBDNDk2LjIxLDQyMS4zNSw0MzIuMDQ1LDM0Ni40OTEsMzQ2LjQ5MSwzMTYuNTQ3eiBNMTI4LjMzLDE3MS4xMDdjMC03MC41ODEsNTcuNzQ5LTEyOC4zMywxMjguMzMtMTI4LjMzICAgIHMxMjguMzMsNTcuNzQ5LDEyOC4zMywxMjguMzNzLTU3Ljc0OSwxMjguMzMtMTI4LjMzLDEyOC4zM1MxMjguMzMsMjQxLjY4OCwxMjguMzMsMTcxLjEwN3oiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
+										/>
+									</div>
+									<div class="col-80">
+										<div class="item-content comheight nopadd">
+											<div class="col-60">被保險人:</div>
+											<div class="col-40 textright" ng-bind="x.peopleName"></div>
+										</div>
+										<div class="item-content comheight nopadd">
+											<div class="col-60">身分證號末三碼:</div>
+											<div class="col-40 textright" ng-bind="x.id"></div>
+										</div>
+										<div class="item-content comheight nopadd">
+											<div class="col-60 ">保費:</div>
+											<div class="col-40 textright">123元</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="accordion-item-content">
+								<div class="content-block nopadd">
+									<div class="item-content nopadd">
+										<div class="col-60">意外身故及殘障保險</div>
+										<div class="col-40 textright" ng-bind="x.Insurance1"></div>
+									</div>
+									<div class="item-content nopadd">
+										<div class="col-60">傷害醫療保險</div>
+										<div class="col-40 textright" ng-bind="x.Insurance2"></div>
+									</div>
+									<div class="item-content nopadd">
+										<div class="col-60">海外突發疾病醫療險</div>
+										<div class="col-40 textright" ng-bind="x.Insurance3"></div>
+									</div>
+									<div class="item-content nopadd">
+										<div class="col-60">每日門診限額</div>
+										<div class="col-40 textright">800元</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="row">
+						<div class="col-100 nopadd">
+							<div class="item-content">
+								<div class="col-50">
+									總保費
+								</div>
+								<div class="col-50 textright">
+									1,000元
+								</div>
+							</div>
+							<div class="item-content" ng-if="button==1">
+								<div class="col-50">
+									<a href="#" class="button color-white com-border" ng-click="backStep3()">取消</a>
+								</div>
+								<div class="col-50">
+									<a href="#" class="button color-white com-border" ng-click="goStep4()">完成</a>
+								</div>
+							</div>
+							<div class="item-content " ng-if="button==2">
+								<div class="col-100">
+									<a href="#" class="button  com-border  comButton color-white" ng-click="backStep4()">返回</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--page4-->
+		<div data-page="page4" class="page cached navbar-fixed toolbar-fixed {{blurry}}">
+			<fubon-qa on-page="page4" block-page="blockPage"></fubon-qa>
+			<!-- begin navbar-->
+			<div class="navbar">
+				<fubon-header></fubon-header>
+			</div>
+			<!-- end navbar-->
+			<!-- begin toolbar-->
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar toolbar-bottom footer">
+					<fubon-footer></fubon-footer>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="content-block">
+					<div class="row">
+						<div class="col-100">
+							<fubon-timeline step="4"></fubon-timeline>
+						</div>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="row">
+						<div class="col-100">
+							<div class="list-block">
+								<div class="row item-content item-content-padding">
+									<div class="color-white">
+										<a href="#" class="badge bg-green" ng-click="compute2()"><i class="fa fa-file-text-o" aria-hidden="true"></i><span style="margin-left:8px">保費明細</span></a>
+									</div>
+								</div>
+								<div class="row item-inner" style="padding-left:16px">
+									<div class="col-40">投保天數</div>
+									<div class="col-60"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+										<sapn style="margin-left:2px" ng-bind="playData.days +'天'"></sapn>
+									</div>
+								</div>
+								<div class="row item-inner" style="padding-left:16px">
+									<div class="col-40">投保開始時間</div>
+									<div class="col-60"><i class="fa fa-calendar" aria-hidden="true"></i>
+										<sapn style="margin-left:2px" ng-bind="startDate"></sapn>
+									</div>
+								</div>
+								<div class="row item-inner" style="padding-left:16px">
+									<div class="col-40">投保結束時間</div>
+									<div class="col-60"><i class="fa fa-calendar" aria-hidden="true"></i>
+										<sapn style="margin-left:2px" ng-bind="endDate"></sapn>
+									</div>
+								</div>
+								<div class="row item-inner" style="padding-left:16px">
+									<div class="col-40">旅遊地點</div>
+									<div class="col-60">
+										<div class="chip">
+											<div class="chip-media bg-green"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+											<div class="chip-label">國內旅遊</div>
+										</div>
+									</div>
+								</div>
+								<div class="row item-inner" style="padding-left:16px">
+									<div class="col-40">總保費</div>
+									<div class="col-60"><span style="margin-left:2px">1,000元</span></div>
+								</div>
+								<div class="item-content row col-100">
+									<span class="col-45">被保險人是否已投保其他旅行平安保險？</span>
+									<div class="col-55">
+										<div class="row">
+											<div class="col-50">
+												<label class="label-radio item-content" ng-click="isOthers('yes')">
+															<input type="radio" name="safety" value="yes" ng-model="isOther">
+															<div class="item-media">
+															<i class="icon icon-form-radio"></i>
+															<span class="span-margin-12">是</span>
+															</div>
+														</label>
+											</div>
+											<div class="col-50">
+												<label class="label-radio item-content" ng-click="isOthers('no')">
+															<input type="radio" name="safety" value="no" ng-model="isOther">
+															<div class="item-media">
+															<i class="icon icon-form-radio"></i>
+															<span class="span-margin-12">否</span>
+															</div>
+														</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div ng-switch="isOther">
+									<div ng-switch-when="yes">
+										<div class="item-content row" ng-show="true">
+											<div class="buttons-row" ng-click="editPre()">
+												<a href="#" class="bg-green badge"><i class="fa fa-file-text-o" aria-hidden="true"></i><span style="margin-left:8px">請輸入保險公司名稱‭/‬保險金額</span></a>
+											</div>
+										</div>
+										<div class="item-content row col-100">
+											<span class="col-100">
+                                                本次有投保其他旅平險，共計<span class="span-color" ng-bind="totalCase"></span>家，保額為
+											<span class="span-color" ng-bind="totalMoney"></span>萬
+											</span>
+										</div>
+									</div>
+									<div ng-switch-when="no">
+									</div>
+								</div>
+								<div class="item-content row col-100">
+									<spna class="col-40">扣款銀行</spna>
+									<span class="col-60">富邦銀行</span>
+								</div>
+								<div class="item-content row co1-100">
+									<spna class="col-40">卡號</spna>
+									<span class="col-60">oooo oooo oooo oooo</span>
+								</div>
+								<div class="item-content col-100 row">
+									<div class="col-50">
+										<div class="buttons-row">
+											<a href="#" class="button  button-fill  color-customize" ng-click="backStep3()">上一步</a>
+										</div>
+									</div>
+									<div class="col-50">
+										<div class="buttons-row">
+											<a href="#" class="button button-fill color-customize" ng-click="end()">完成</a>
+										</div>
+									</div>
+								</div>
+								<div class="item-content col-100 row">
+									<div class="col-50">
+										<div class="buttons-row">
+											<a href="#" class="button  button-fill  color-gray" ng-click="errorCreditcard()">信用卡授權失敗</a>
+										</div>
+									</div>
+									<div class="col-50">
+										<div class="buttons-row">
+											<a href="#" class="button button-fill color-gray" ng-click="error()">其他失敗</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end page content -->
+			</div>
+		</div>
+		<!--premiumList-->
+		<div data-page="premiumList" class="page cached">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+						<a href="#" class="link close-popup icon-only" ng-click="completePremium()">
+							<i class="icon icon-back"></i>
+						</a>
+					</div>
+					<div class="center sliding">保費清單</div>
+					<div class="right"></div>
+				</div>
+			</div>
+			<div class="toolbar">
+				<div class="toolbar toolbar-bottom footer">
+					<fubon-footer></fubon-footer>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="content-block">
+					<div class="row">
+						<div class="col-100">
+							<fubon-timeline step="4"></fubon-timeline>
+						</div>
+					</div>
+				</div>
+				<div class="content-block">
+					<div class="row">
+						<div class="col-100">
+							<form class="list-block inputs-list" id="formData1">
+								<ul>
+									<li>
+										<div class="item-content item-clean">
+											<div class="item-inner">
+												<div class="item-title floating-label">請輸入保險公司名稱</div>
+												<div class="item-input item-input-field">
+													<input type="text" name="companyName" placeholder="" readonly id="companyName" ng-model="premiumList.companyName">
+												</div>
+											</div>
+											<button class="clean-button" ng-click="cleanInput('companyName')"><i class="fa fa-times " aria-hidden="true"></i></button>
+										</div>
+									</li>
+									<li>
+										<div class="item-content item-clean">
+											<div class="item-inner">
+												<div class="item-title floating-label">請輸入保險金額(萬元)</div>
+												<div class="item-input item-input-field">
+													<input type="tel" name="money" placeholder="" id="money" ng-model="premiumList.money">
+												</div>
+											</div>
+											<button class="clean-button" ng-click="cleanInput('money')"><i class="fa fa-times " aria-hidden="true"></i></button>
+										</div>
+									</li>
+									<li>
+										<div class="item-content row">
+											<div class="col-100">
+												<div class="buttons-row">
+													<a href="#" class="button button-fill color-customize" ng-click="savePremium(premiumList)">新增</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</form>
+							<div class="list-block sortable" ng-if="premiumListData.length > 0">
+								<ul>
+									<li>
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title font-green">保險公司名稱</div>
+												<div class="item-title font-green">保險金額(萬元)</div>
+												<div class="item-after">
+													<i class=""></i>
+													<i class=""></i>
+												</div>
+											</div>
+										</div>
+										<!-- Sortable handler  -->
+										<div class="sortable-handler"></div>
+									</li>
+									<li ng-repeat="x in premiumListData track by $index">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title" ng-bind="x.companyName"></div>
+												<div class="item-title" ng-bind="x.money"></div>
+												<div class="item-after">
+													<i class="fa fa-pencil-square-o fa-2" aria-hidden="true" ng-click="modifyPremium(x, $index)"></i>
+													<i class="fa fa-trash-o fa-2" aria-hidden="true" ng-click="deletePremium($index)"></i>
+												</div>
+											</div>
+										</div>
+										<div class="sortable-handler"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-block">
+				</div>
+			</div>
+			<!-- end page content -->
+		</div>
+		<!--qa-->
+		<fubon-qa-page block-page="blockPage"></fubon-qa-page>
+		<!--endPage-->
+		<div data-page="endPage" class="page navbar-fixed cached">
+			<fubon-qa on-page="endPage" block-page="blockPage"></fubon-qa>
+			<!-- begin navbar-->
+			<div class="navbar">
+				<fubon-header></fubon-header>
+			</div>
+			<!-- end navbar-->
+			<!-- begin toolbar-->
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar toolbar-bottom footer">
+					<fubon-footer></fubon-footer>
+				</div>
+			</div>
+			<!-- end toolbar-->
+			<!-- begin page content -->
+			<div class="page-content">
+				<div class="content-block centerarea">
+					<div class="row">
+						<div class="col-100">
+							<div class="list-block">
+								<div class="modal-title">
+									<p>謝謝您的申請！</p>
+									<p>稍後將透過回撥/訊息通知您投保作業結果。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end page content -->
+		</div>
+		<!--success-->
+		<fubon-success>
+			<div class="row">
+				<div class="success-title-text col-100">申請成功!</div>
+			</div>
+			<div class="success-content-text">謝謝您的申請!<br>稍後將透過回撥/訊息<br>通知您投保結果</div>
+		</fubon-success>
+		<!--error-->
+		<fubon-error>
+			<div class="row">
+				<div class="error-title-text col-100">申請失敗!</div>
+			</div>
+			<div class="row">
+				<div class="error-content-text col-100">很抱歉，
+					<font color="#E58590">無法完成您的線上申請</font>，請撥打客服專線
+					<a class="telbtn" onclick="location.href='tel:0809001688'"> <i class="fa fa-phone" aria-hidden="true"></i> 0809-001-688</a> 將優先由專人替您服務!</div>
+			</div>
+			<!--<p class="error-content-text"></p>-->
+		</fubon-error>
+		<!--error-->
+		<!--errorCreditcard-->
+		<fubon-error-creditcard>
+			<div class="row">
+				<div class="error-title-text col-100">申請失敗!</div>
+			</div>
+			<div class="error-content-text col-100">
+				很抱歉，信用卡授權失敗。
+				<font color="#E58590">無法完成您的線上申請</font>，請與信用卡公司聯繫或請撥打客服專線
+				<a class="telbtn" onclick="location.href='tel:0809001688'"> <i class="fa fa-phone" aria-hidden="true"></i> 0809-001-688</a> 將優先由專人替您服務
+			</div>
+		</fubon-error-creditcard>
+	</div>
+	</div>
+	</div>
+</body>
+
+</html>

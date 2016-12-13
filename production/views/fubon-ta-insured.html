@@ -1,0 +1,55 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="#" ng-click="vm.backLaction()" class="link close-popup icon-only">
+				<i class="icon icon-back"></i>
+			</a>
+		</div>
+		<div class="center sliding">被保險人</div>
+		<div class="right"></div>
+	</div>
+</div>
+<div class="toolbar">
+	<div class="toolbar toolbar-bottom footer">
+		<fubon-footer></fubon-footer>
+	</div>
+</div>
+<div class="page-content">
+	<div class="list-block">
+		<ul>
+			<li>
+				<label class="label-checkbox item-content" ng-click="vm.selectAll()">
+					            <input type="checkbox" ng-checked="vm.isALlchecked" ng-click="vm.selectAll()">
+								<div class="item-media">
+									<i class="icon icon-form-checkbox"></i>
+								</div>
+								<div class="item-inner peopleColStyle">
+									<div>姓名</div>
+									<div>生日年</div>
+									<div>身分證號<br/>末三碼</div>
+								</div>
+							</label>
+			</li>
+			<li ng-repeat="x in vm.peopleData track by $index">
+				<label class="label-checkbox item-content" ng-click="vm.selectPeople(x)">
+								<input type="checkbox" name="{{x.name}}" value="{{x.name}}" ng-checked="x.checked" ng-click="vm.selectPeople(x)">
+								<div class="item-media">
+									<i class="icon icon-form-checkbox"></i>
+								</div>
+								<div class="item-inner peopleColStyle">
+									<div ng-bind="x.name"></div>
+									<div ng-bind="x.birthday"></div>
+									<div ng-bind="x.lastCode"></div>
+								</div>
+							</label>
+			</li>
+			<li>
+				<div class="row item-content">
+					<div class="buttons-row content-width">
+						<a href="#" class="button  button-fill  color-customize" ng-click="vm.backLaction()">確認</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

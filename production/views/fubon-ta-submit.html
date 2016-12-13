@@ -1,0 +1,147 @@
+<!--<div data-page="page4" class="page cached navbar-fixed toolbar-fixed {{blurry}}">-->
+<fubon-qa block-page="page4"></fubon-qa>
+<!-- begin navbar-->
+<div class="navbar">
+	<fubon-header></fubon-header>
+</div>
+<!-- end navbar-->
+<!-- begin toolbar-->
+<div class="toolbar toolbar-bottom">
+	<div class="toolbar toolbar-bottom footer">
+		<fubon-footer></fubon-footer>
+	</div>
+</div>
+<div class="page-content">
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<fubon-timeline step="4"></fubon-timeline>
+			</div>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="row">
+			<div class="col-100">
+				<div class="list-block">
+					<div class="row item-content item-content-padding">
+						<div class="color-white">
+							<a href="#" class="badge bg-green" ng-click="vm.compute2()"><i class="fa fa-file-text-o" aria-hidden="true"></i><span style="margin-left:8px">保費明細</span></a>
+						</div>
+					</div>
+					<div class="row item-inner" style="padding-left:16px">
+						<div class="col-40">投保天數</div>
+						<div class="col-60"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+							<sapn style="margin-left:2px" ng-bind="vm.playData.days +'天'"></sapn>
+						</div>
+					</div>
+					<div class="row item-inner" style="padding-left:16px">
+						<div class="col-40">投保開始時間</div>
+						<div class="col-60"><i class="fa fa-calendar" aria-hidden="true"></i>
+							<sapn style="margin-left:2px" ng-bind="vm.playData.startDate"></sapn>
+						</div>
+					</div>
+					<div class="row item-inner" style="padding-left:16px">
+						<div class="col-40">投保結束時間</div>
+						<div class="col-60"><i class="fa fa-calendar" aria-hidden="true"></i>
+							<sapn style="margin-left:2px" ng-bind="vm.playData.endDate"></sapn>
+						</div>
+					</div>
+					<div class="row item-inner" style="padding-left:16px">
+						<div class="col-40">旅遊地點</div>
+						<div class="col-60">
+							<span ng-repeat="x in vm.playData.playSite">
+                            <div class="chip">
+                                <div class="chip-media bg-green"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                <div class="chip-label"  ng-bind="x.locationName">國內旅遊</div>
+                            </div>
+                               </span>
+						</div>
+					</div>
+					<div class="row item-inner" style="padding-left:16px">
+						<div class="col-40">總保費</div>
+						<div class="col-60"><span style="margin-left:2px">
+							
+							{{vm.totalFee+'元'}}
+							</span></div>
+					</div>
+					<div class="item-content row col-100">
+						<span class="col-45">被保險人是否已投保其他旅行平安保險？</span>
+						<div class="col-55">
+							<div class="row">
+								<div class="col-50" ng-click="vm.isOthers(true)">
+									<label class="label-radio item-content">
+															<input type="radio" name="safety"  ng-click="vm.isOthers(true)" >
+															<div class="item-media">
+															<i class="icon icon-form-radio"></i>
+															<span class="span-margin-12">是</span>
+															</div>
+														</label>
+								</div>
+								<div class="col-50" ng-click="vm.isOthers(false)">
+									<label class="label-radio item-content">
+															<input type="radio" name="safety" ng-click="vm.isOthers(false)" checked>
+															<div class="item-media">
+															<i class="icon icon-form-radio"></i>
+															<span class="span-margin-12">否</span>
+															</div>
+														</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div ng-switch="vm.isOther">
+						<div ng-switch-when="true">
+							<div class="item-content row" ng-show="true">
+								<div class="buttons-row" ng-click="vm.editPre()">
+									<a href="#" class="bg-green badge"><i class="fa fa-file-text-o" aria-hidden="true"></i><span style="margin-left:8px">請輸入保險公司名稱‭/‬保險金額</span></a>
+								</div>
+							</div>
+							<div class="item-content row col-100">
+								<span class="col-100">
+                                                本次有投保其他旅平險，共計<span class="span-color" ng-bind="vm.total.totalCase"></span>家，保額為
+								<span class="span-color" ng-bind="vm.total.totalMoney"></span>萬
+								</span>
+							</div>
+						</div>
+						<div ng-switch-when="false">
+						</div>
+					</div>
+					<div class="item-content row col-100">
+						<spna class="col-40">扣款銀行</spna>
+						<span class="col-60" ng-bind="vm.bank"></span>
+					</div>
+					<div class="item-content row co1-100">
+						<spna class="col-40">卡號</spna>
+						<span class="col-60" ng-bind="vm.cardNumber"></span>
+					</div>
+					<div class="item-content col-100 row">
+						<div class="col-50">
+							<div class="buttons-row">
+								<a href="#" class="button  button-fill  color-customize" ng-click="vm.backStep3()">上一步</a>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="buttons-row">
+								<a href="#" class="button button-fill color-customize" ng-click="vm.end()">完成</a>
+							</div>
+						</div>
+					</div>
+					<!--<div class="item-content col-100 row">
+						<div class="col-50">
+							<div class="buttons-row">
+								<a href="#" class="button  button-fill  color-gray" ng-click="vm.errorCreditcard()">信用卡授權失敗</a>
+							</div>
+						</div>
+						<div class="col-50">
+							<div class="buttons-row">
+								<a href="#" class="button button-fill color-gray" ng-click="vm.error()">其他失敗</a>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end page content -->
+</div>
+<!--</div>-->

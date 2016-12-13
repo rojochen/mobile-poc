@@ -1,0 +1,24 @@
+/* 'x' 小按鈕*/
+
+.item-content {
+    padding-left: 0px;
+}
+
+.item-content.item-clean>.fa-times {
+    color: #ddd;
+}
+
+.item-content.item-clean>.clean-button {
+    width: 42px;
+    height: 40px;
+    border: 0px;
+    background-color: Transparent;
+}
+
+.item-content.item-clean>.clean-button>i {
+    color: #aaa;
+}
+
+.item-content.item-clean>.item-inner {
+    padding-right: 0px
+}

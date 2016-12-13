@@ -1,0 +1,109 @@
+<!--<div data-page="premiumList" class="page cached">-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link close-popup icon-only" ng-click="vm.completePremium()">
+                <i class="icon icon-back"></i>
+            </a>
+        </div>
+        <div class="center sliding">保費清單</div>
+        <div class="right"></div>
+    </div>
+</div>
+<div class="toolbar">
+    <div class="toolbar toolbar-bottom footer">
+        <fubon-footer></fubon-footer>
+    </div>
+</div>
+<div class="page-content">
+    <div class="content-block">
+        <div class="row">
+            <div class="col-100">
+                <fubon-timeline step="4"></fubon-timeline>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+        <div class="row">
+            <div class="col-100">
+                <form class="list-block inputs-list" id="formData1">
+                    <ul>
+                        <li>
+                            <div class="item-content item-clean">
+                                <div class="item-inner">
+                                    <div class="item-title floating-label">請輸入保險公司名稱</div>
+                                    <div class="item-input item-input-field">
+                                        <input type="text" name="companyName" placeholder="" readonly id="companyName" ng-model="vm.premiumList.companyName">
+                                    </div>
+                                </div>
+                                <button class="clean-button" ng-click="vm.cleanInput('companyName')"><i class="fa fa-times " aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content item-clean">
+                                <div class="item-inner">
+                                    <div class="item-title floating-label">請輸入保險金額(單位：萬元)</div>
+                                    <div class="item-input item-input-field">
+                                        <input type="tel" name="money" placeholder="" id="money" ng-model="vm.premiumList.money">
+                                    </div>
+                                </div>
+                                <button class="clean-button" ng-click="vm.cleanInput('money')"><i class="fa fa-times " aria-hidden="true"></i></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content row">
+                                <div class="col-100">
+                                    <div class="buttons-row">
+                                        <a href="#" class="button button-fill color-customize" ng-click="vm.savePremium(vm.premiumList)"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+                <div class="list-block sortable" ng-if="vm.premiumListData.length > 0">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title font-green">保險公司名稱</div>
+                                    <div class="item-title font-green">保險金額(單位：萬元)</div>
+                                    <div class="item-after">
+                                        <i class=""></i>
+                                        <i class=""></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sortable handler  -->
+                            <div class="sortable-handler"></div>
+                        </li>
+                        <li ng-repeat="x in vm.premiumListData track by $index">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title" ng-bind="x.companyName"></div>
+                                    <div class="item-title" ng-bind="x.money"></div>
+                                    <div class="item-after">
+                                        <i class="fa fa-pencil-square-o fa-2" aria-hidden="true" ng-click="vm.modifyPremium(x, $index)"></i>
+                                        <i class="fa fa-trash-o fa-2" aria-hidden="true" ng-click="vm.deletePremium($index)"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sortable-handler"></div>
+                        </li>
+                        <li>
+                            <div class="row item-content">
+                                <div class="buttons-row content-width">
+                                    <a href="#" class="button  button-fill  color-customize" ng-click="vm.completePremium()">確認</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+    </div>
+</div>
+<!-- end page content -->
+<!--</div>-->

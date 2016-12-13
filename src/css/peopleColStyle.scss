@@ -1,0 +1,13 @@
+.peopleColStyle div{
+    &:first-child{
+        width:40%;
+    }
+    &:nth-child(2){
+        width:24%;
+		text-align: center;
+    }
+    &:last-child{
+        width:40%;
+		text-align: center;
+    }
+}

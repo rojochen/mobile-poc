@@ -1,0 +1,43 @@
+.button {
+    font-size: $fz;
+}
+
+.buttons-row {
+    padding-right: 16px;
+    .button:first-child.buttonMargin {
+        margin-left: 16px;
+    }
+}
+
+.button.button-fill.color-customize {
+    color: #fff;
+    background-color: #52c2e6;
+    box-shadow: 0px 1px rgba(8%, 8%, 8%, 0.3), 0px 2px rgba(6%, 6%, 6%, 0.2);
+}
+
+.floating-button {
+    width: 42px;
+    height: 42px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 3px 3px rgba(0, 0, 0, .23);
+}
+
+.floating-button.color-blue {
+    color: #fff;
+    background: #0D789B;
+}
+
+.span-margin-12 {
+    margin-left: 12px;
+}
+
+.span-margin-2 {
+    margin-left: 2px;
+}
+
+.span-color {
+    color: red;
+}
+
+.content-width {
+    width: 100%;
+}

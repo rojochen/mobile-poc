@@ -1,0 +1,33 @@
+/*$fz: 16px;*/
+
+$errorcolor: #E58590;
+$errortext:36px;
+.error-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+.error-title-text {
+    color: $errorcolor;
+    font-size: $errortext;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.error-content-text {
+    font-size: $fz;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.content-block {
+    margin: 20px 0;
+}
+
+font.bodycolor {
+    color: $errorcolor;
+}

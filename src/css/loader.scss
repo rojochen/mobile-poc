@@ -1,0 +1,39 @@
+.modal-overlay {
+    background: #fff;
+}
+
+.modal-overlay.modal-overlay-visible {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.preloader {
+    width: 60px;
+    height: 60px;
+    z-index: 140000;
+}
+
+.preloader-inner .preloader-inner-half-circle {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 200%;
+    box-sizing: border-box;
+    border: 6px solid #666;
+    border-bottom-color: transparent !important;
+    border-radius: 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1.3125s;
+    -webkit-animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-iteration-count: infinite;
+    animation-duration: 1.3125s;
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.modal-preloader {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    .modal-title {
+        display: none !important;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="left">
+			<a href="#" ng-click="vm.backLaction()" class="link close-popup icon-only">
+				<i class="icon icon-back"></i>
+			</a>
+		</div>
+		<div class="center sliding">國外旅遊地點</div>
+		<div class="right"></div>
+	</div>
+</div>
+<div class="toolbar">
+	<div class="toolbar toolbar-bottom footer">
+		<fubon-footer></fubon-footer>
+	</div>
+</div>
+<div class="page-content">
+	<div class="content-block-title">已選地點（請選擇主要旅遊地區）</div>
+	<div class="content-block">
+		<div class="chip" ng-repeat="x in vm.selectPlayList" style="margin-right:4px">
+			<div class="chip-media bg-blue"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+			<div class="chip-label" ng-bind="x.locationName"></div>
+			<a class="chip-delete" ng-click="vm.playListDelete(x, $index)"></a>
+		</div>
+	</div>
+	<div class="list-block s-list-block">
+		<ul>
+			<li ng-repeat="x in vm.locationData">
+				<label class="label-checkbox item-content" ng-click="vm.selectLocation(x)">
+								<input type="checkbox" name="{{x.locationName}}" value="{{x.locationName}}" ng-checked="x.checked" ng-click="vm.selectLocation(x)">
+								<div class="item-media">
+									<i class="icon icon-form-checkbox"></i>
+								</div>
+								<div class="item-inner">
+									<div class="item-title" ng-bind="x.locationName"></div>
+								</div>
+							</label>
+			</li>
+		</ul>
+	</div>
+	<div class="list-block promptstyle">
+		<ul>
+			<li>投保「海外突發疾病醫療健康保險」，於海外特定地區發生突發疾病需住院/門診/急診之治療行為者，保險金限額調整為美加3.5倍、日歐紐澳2倍。</li>
+		</ul>
+	</div>
+	<div class="list-block">
+		<div class="row item-content">
+			<div class="buttons-row content-width">
+				<a href="#" class="button  button-fill  color-customize" ng-click="vm.backLaction()">確認</a>
+			</div>
+		</div>
+	</div>

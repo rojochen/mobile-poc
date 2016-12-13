@@ -1,0 +1,79 @@
+<!--<div data-page="checkInsurance" class="page cached">-->
+<!-- begin navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" ng-click="vm.backPage3()" class="link close-popup icon-only">
+                <i class="icon icon-back"></i>
+            </a>
+        </div>
+        <div class="center sliding">財務核保</div>
+        <div class="right"></div>
+    </div>
+</div>
+<!-- end navbar-->
+<!-- begin toolbar-->
+<div class="toolbar toolbar-bottom">
+    <div class="toolbar toolbar-bottom footer">
+        <fubon-footer></fubon-footer>
+    </div>
+</div>
+<!-- end toolbar-->
+<!-- begin page content -->
+<div class="page-content">
+    <div class="content-block">
+        <div class="row">
+            <div class="col-100">
+                <div class="list-block inputs-list">
+                    <ul>
+                        <li>
+                            <div class="item-content item-clean">
+                                <div class="premiumtext">
+                                    <p>被保險人在三個月內於同業有投保紀錄，依規定需完成被保險人年收入調查後方可投保</p>
+                                </div>
+                            </div>
+                            <div class="item-content item-clean">
+                                <div class="premiumtext">
+                                    <p class="font-red">若該被保險人未成年或無個人年收入，請填寫家庭年收入。</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-content" ng-repeat="x in vm.playData track by $index">
+                    <div class="" style="margin-top:10px;">
+                        <div class="item-inner">
+                            <div class="row">
+                                <div class="col-50 textalign">被保險人:</div>
+                                <div class="col-50 ">{{x.insuredName}}</div>
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div class="row">
+                                <div class="col-50 textalign">身分證號末三碼:</div>
+                                <div class="col-50 ">{{x.lastCode}}</div>
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div class="row">
+                                <div class="col-50 textalign">年收入(萬):</div>
+                                <div class="col-50">
+                                    <input type="tel" name="income" placeholder="請輸入年收入" id="income" class="incomestyle" ng-model="x.income" ng-blur="vm.blurIncome(x)"
+                                        maxlength="4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-inner">
+                            <div class="row">
+                                <div class="col-50 textalign">最高可投保金額:</div>
+                                <div class="col-50" ng-bind="x.maxMoney+'萬'" ng-if="x.maxMoney"></div>
+                            </div>
+                        </div>
+                        <div class="" style=" border-bottom: 4px dotted  #00789d; margin-top:10px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" ng-app="fubon.ta.callin.app" ng-strict-di>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"
+	/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>富邦旅平險專案</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/main.css" data-th-href="@{css/main.css}" />
+	<!-- Scripts -->
+	<script th:inline="javascript" type="text/javascript">
+	  window.$$API_PATH = '';
+	  //<![CDATA[
+	  window.$$API_PATH = [[@{/}]];
+	  //]]>
+	</script>
+</head>
+
+<body ng-controller="aaPageController">
+	<div class="views tabs">
+		<!--index-->
+		<div class="view view-main tab active">
+			<div class="pages">
+				<!--page1-->
+				<fubon-ta-login data-page="index" class="page cached navbar-fixed toolbar-fixed"></fubon-ta-login>
+				<!--page2-->
+				<fubon-ta-form data-page="page2" class="page cached navbar-fixed toolbar-fixed" select-play-list="selectPlayList"></fubon-ta-form>
+				<!--playLocation-->
+				<fubon-play-location data-page="playLocation" class="page cached" select-play-list="selectPlayList"></fubon-play-location>
+				<!--Insured-->
+				<fubon-insured data-page="Insured" class="page cached"></fubon-insured>
+				<!--page3-->
+				<fubon-ta-sheets data-page="page3" class="page cached navbar-fixed toolbar-fixed" select-people-data="selectPeopleData"></fubon-ta-sheets>
+				<!--checkInsurance-->
+				<fubon-ta-underwriting data-page="checkInsurance" play-data="playData" class="page cached"></fubon-ta-underwriting>
+				<!--black-->
+				<fubon-ta-confirm-modal data-page="black" class="page cached block-style" select-people-data="selectPeopleData"></fubon-ta-confirm-modal>
+				<!--page4-->
+				<fubon-ta-submit data-page="page4" class="page cached navbar-fixed toolbar-fixed" play-data="playData" total="total" premium-list-data="premiumListData"></fubon-ta-submit>
+				<!--premiumList-->
+				<fubon-ta-insurance-others data-page="premiumList" class="page cached" total="total" premium-list-data="premiumListData"></fubon-ta-insurance-others>
+				<!--qa-->
+				<fubon-qa-page data-page="qa" class="page cached navbar-fixed" block-page="index"></fubon-qa-page>
+				<!--success-->
+				<fubon-success data-page="success" class="page cached toolbar-fixed">
+					<div class=" row ">
+						<div class="success-title-text col-100 ">申請成功!</div>
+					</div>
+					<div class="success-content-text ">謝謝您的申請!<br>稍後將透過回撥/訊息<br>通知您投保結果</div>
+				</fubon-success>
+				<!--error-->
+				<fubon-error data-page="error" class="page cached toolbar-fixed">
+					<div class="row ">
+						<div class="error-title-text col-100 ">申請失敗!</div>
+					</div>
+					<div class="row ">
+						<div class="error-content-text col-100 ">很抱歉，
+							<font class="bodycolor">無法完成您的線上申請</font>，請撥打客服專線
+							<a class="telbtn " onclick="location.href='tel:0809001688' "> <i class="fa fa-phone " aria-hidden="true "></i>0809-001-688</a>將優先由專人替您服務!</div>
+					</div>
+					<!--<p class="error-content-text "></p>-->
+				</fubon-error>
+				<!--errorCreditcard-->
+				<fubon-error-creditcard data-page="errorCreditcard" class="page cached toolbar-fixed">
+					<div class="row ">
+						<div class="error-title-text col-100 ">申請失敗!</div>
+					</div>
+					<div class="error-content-text col-100 ">
+						很抱歉，信用卡授權失敗。
+						<font class="bodycolor">無法完成您的線上申請</font>，請與信用卡公司聯繫或請撥打客服專線
+						<a class="telbtn " onclick="location.href='tel:0809001688' "> <i class="fa fa-phone " aria-hidden="true "></i> 0809-001-688</a> 將優先由專人替您服務
+					</div>
+				</fubon-error-creditcard>
+			</div>
+		</div>
+	</div>
+	<script src="js/assets/app.js" data-th-src="@{js/assets/app.js}"></script>
+	<script src="js/controller/main.dev.js" data-th-src="@{js/controller/main.js}"></script>
+	<script src="js/service/CallInEntity.js" data-th-src="@{js/service/CallInEntity.js}"></script>
+	<script src="js/service/APIService.js" data-th-src="@{js/service/APIService.js}"></script>
+	<script src="js/service/APIInterceptors.js" data-th-src="@{js/service/APIInterceptors.js}"></script>
+	<script src="js/controller/IndexController.js" data-th-src="@{js/controller/IndexController.js}"></script>
+	<script src="js/template/templates.js" data-th-src="@{js/template/templates.js}"></script>	
+	<script src="js/component/dist/component.js" data-th-src="@{js/component/dist/component.js}"></script>
+</body>
+
+</html>

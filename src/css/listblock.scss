@@ -1,0 +1,133 @@
+/*$fz: 16px;*/
+
+.list-block {
+    font-size: $fz;
+    margin: 20px 0px 50px 0px;
+    ul:before {
+        height: 0px;
+    }
+    ul:after {
+        height: 0px;
+    }
+    .item-title {
+        white-space: inherit;
+        padding-right: 12px;
+    }
+    .item-input-field:after {
+        background-color: #444;
+        -webkit-transform: scaleY(2)!important;
+        transform: scaleY(2)!important;
+    }
+    .item-input-area {
+        min-height: 33px;
+        padding-bottom: 3px;
+        .list-area {
+            line-height: 36px;
+        }
+    }
+    .item-inner .item-title-top {
+        padding-top: 7px;
+    }
+    input[type=date] {
+        font-size: $fz;
+    }
+    input[type=datetime-local] {
+        font-size: $fz;
+    }
+    input[type=email] {
+        font-size: $fz;
+    }
+    input[type=number] {
+        font-size: $fz;
+    }
+    input[type=password] {
+        font-size: $fz;
+    }
+    input[type=search] {
+        font-size: $fz;
+    }
+    input[type=tel] {
+        font-size: $fz;
+    }
+    input[type=text] {
+        font-size: $fz;
+    }
+    input[type=time] {
+        font-size: $fz;
+    }
+    input[type=url] {
+        font-size: $fz;
+    }
+    select {
+        font-size: $fz;
+    }
+    textarea {
+        font-size: $fz;
+    }
+    ul ul.premiumLine {
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+        padding: 1% 32px 1% 32px;
+    }
+}
+
+.list-block.inputs-list .floating-label {
+    color: #666666;
+}
+
+.list-block .input-item .floating-label,
+.list-block .input-item .label,
+.list-block.inputs-list .floating-label,
+.list-block.inputs-list .label {
+    font-size: $fz;
+}
+
+.list-block .input-item .floating-label,
+.list-block.inputs-list .floating-label {
+    -webkit-transform: translateY(21px);
+    transform: translateY(21px);
+    font-size: $fz;
+}
+
+.list-block .item-divider,
+.list-block .list-group-title {
+    font-size: $fz;
+}
+
+.list-block .input-item .floating-label,
+.list-block.inputs-list .floating-label {
+    max-width: 95%;
+}
+
+.list-block.s-list-block {
+    margin-bottom: 0px;
+}
+
+.list-block .not-empty-state {
+    .floating-label {
+        color: #12937F;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .item-input-field:after {
+        background: #1B94BB;
+    }
+}
+
+.list-block .not-empty-state .floating-label {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.list-block .focus-state .floating-label {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.list-block .item-content {
+    padding-left: 10px;
+}
+
+.list-block .item-title {
+    padding-right: 0px;
+}

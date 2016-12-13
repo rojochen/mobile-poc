@@ -1,0 +1,108 @@
+<!--<div data-page="page3" class="page cached navbar-fixed toolbar-fixed {{vm.blurry}}">-->
+<fubon-qa on-page="page3" block-page="page3"></fubon-qa>
+<!-- begin navbar-->
+<div class="navbar">
+    <fubon-header></fubon-header>
+</div>
+<!-- end navbar-->
+<!-- begin toolbar-->
+<div class="toolbar toolbar-bottom">
+    <div class="toolbar toolbar-bottom footer">
+        <fubon-footer></fubon-footer>
+    </div>
+</div>
+<div class="page-content {{vm.blurry}}">
+    <div class="content-block ">
+        <div class="row ">
+            <div class="col-100 ">
+                <fubon-timeline step="3 "></fubon-timeline>
+            </div>
+        </div>
+    </div>
+    <div class="content-block ">
+        <div class="row ">
+            <div class="col-100 ">
+                <div class="list-block inputs-list ">
+                    <ul>
+                        <div ng-repeat="x in vm.selectPeopleData track by $index " class="dottedline">
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><img class="peopleimg" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMy4zMiA1MTMuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMy4zMiA1MTMuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNDYuNDkxLDMxNi41NDdjNDkuMTkzLTI5Ljk0NCw4MS4yNzUtODMuNDE0LDgxLjI3NS0xNDUuNDRDNDI3Ljc2Nyw3Ni45OTgsMzUwLjc2OCwwLDI1Ni42NiwwICAgIFM4NS41NTMsNzYuOTk4LDg1LjU1MywxNzEuMTA3YzAsNjIuMDI2LDMyLjA4MiwxMTUuNDk3LDgxLjI3NSwxNDUuNDRDODEuMjc1LDM0OC42MywxNy4xMSw0MjMuNDg5LDAsNTEzLjMyaDQyLjc3NyAgICBjMjEuMzg4LTk4LjM4NiwxMDkuMDgxLTE3MS4xMDcsMjEzLjg4My0xNzEuMTA3czE5Mi40OTUsNzIuNzIsMjEzLjg4MywxNzEuMTA3aDQyLjc3NyAgICBDNDk2LjIxLDQyMS4zNSw0MzIuMDQ1LDM0Ni40OTEsMzQ2LjQ5MSwzMTYuNTQ3eiBNMTI4LjMzLDE3MS4xMDdjMC03MC41ODEsNTcuNzQ5LTEyOC4zMywxMjguMzMtMTI4LjMzICAgIHMxMjguMzMsNTcuNzQ5LDEyOC4zMywxMjguMzNzLTU3Ljc0OSwxMjguMzMtMTI4LjMzLDEyOC4zM1MxMjguMzMsMjQxLjY4OCwxMjguMzMsMTcxLjEwN3oiIGZpbGw9IiMwZDc4OWIiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K "
+                                        />
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="row">
+                                            <div class="finance-font-title">被保險人:</div><span class="finance-font-content">{{x.insuredName}}</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="finance-font-title">身分證末三碼:</span><span class="finance-font-content"
+                                                ng-bind="x.insuredID"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-clean">
+                                    <div class="item-inner {{x.Insurance1_style}}">
+                                        <div class="item-title floating-label">意外身故及殘廢保額<span class="font-red">(ADD)</span></div>
+                                        <div class="item-input item-input-field">
+                                            <input type="text" name="Insurance1" placeholder="" readonly class="Insurance1_{{$index}}" ng-model="x.Insurance1">
+                                        </div>
+                                    </div>
+                                    <button class="clean-button" disabled></button>
+                                    <!--<button class="clean-button" ng-click="vm.cleanInsurance( 'Insurance1', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>-->
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-clean">
+                                    <div class="item-inner {{x.Insurance2_style}}">
+                                        <div class="item-title floating-label">傷害醫療保額<span class="font-red">(MR)</span></div>
+                                        <div class="item-input item-input-field ">
+                                            <input type="text" name="Insurance2" placeholder="" readonly class="Insurance2_{{$index}}" ng-model="x.Insurance2">
+                                        </div>
+                                    </div>
+                                    <button class="clean-button" ng-click="vm.cleanInsurance('Insurance2', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>
+                                </div>
+                            </li>
+                            <li ng-if="vm.playArea==2">
+                                <div class="item-content item-clean">
+                                    <div class="item-inner {{x.Insurance3_style}}">
+                                        <div class="item-title floating-label">海外突發疾病醫療保額<span class="font-red">(OHS1)</span></div>
+                                        <div class="item-input item-input-field">
+                                            <input type="text" name="Insurance3" placeholder="" readonly class="Insurance3_{{$index}}" ng-model="x.Insurance3">
+                                        </div>
+                                    </div>
+                                    <button class="clean-button" ng-click="vm.cleanInsurance('Insurance3', $index)"><i class="fa fa-times " aria-hidden="true "></i></button>
+                                </div>
+                            </li>
+                        </div>
+                        <li>
+                            <div class="item-content row ">
+                                <div class="col-50 ">
+                                    <div class="buttons-row ">
+                                        <a href="# " class="button button-fill color-customize " ng-click="vm.backStep2()">上一步</a>
+                                    </div>
+                                </div>
+                                <div class="col-50 ">
+                                    <div class="buttons-row ">
+                                        <a href="# " class="button button-fill color-customize " ng-click="vm.compute()">試算保費</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--<li>
+                            <div class="item-content row ">
+                                <div class="col-100 ">
+                                    <div class="buttons-row ">
+                                        <a href="# " class="button button-fill color-customize" style="background:#999;" ng-click="vm.goCheckInsurance() ">財務核保</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>-->

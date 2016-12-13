@@ -1,0 +1,10 @@
+node_modules
+/node_modules
+production/css/
+production/img/assets
+production/js/assets
+production/js/component/dist
+production/js/template
+dist
+.DS_Store
+*.DS_Store

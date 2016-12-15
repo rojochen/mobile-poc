@@ -12,10 +12,10 @@
 	<link rel="stylesheet" href="css/main.css" data-th-href="@{css/main.css}" />
 	<!-- Scripts -->
 	<script th:inline="javascript" type="text/javascript">
-	  window.$$API_PATH = '';
-	  //<![CDATA[
-	  window.$$API_PATH = [[@{/}]];
-	  //]]>
+		//   window.$$API_PATH = '';
+		//<![CDATA[
+		//   window.$$API_PATH = [[@{/}]];
+		//]]>
 	</script>
 </head>
 
@@ -74,6 +74,7 @@
 						<a class="telbtn " onclick="location.href='tel:0809001688' "> <i class="fa fa-phone " aria-hidden="true "></i> 0809-001-688</a> 將優先由專人替您服務
 					</div>
 				</fubon-error-creditcard>
+				<fubon-get-camera data-page="camera" class="page cached navbar-fixed toolbar-fixed"></fubon-get-camera>
 			</div>
 		</div>
 	</div>
@@ -83,7 +84,7 @@
 	<script src="js/service/APIService.js" data-th-src="@{js/service/APIService.js}"></script>
 	<script src="js/service/APIInterceptors.js" data-th-src="@{js/service/APIInterceptors.js}"></script>
 	<script src="js/controller/IndexController.js" data-th-src="@{js/controller/IndexController.js}"></script>
-	<script src="js/template/templates.js" data-th-src="@{js/template/templates.js}"></script>	
+	<script src="js/template/templates.js" data-th-src="@{js/template/templates.js}"></script>
 	<script src="js/component/dist/component.js" data-th-src="@{js/component/dist/component.js}"></script>
 </body>
 

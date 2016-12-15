@@ -156,5 +156,9 @@
                 })
             }
         }
+
+        vm.camera = function () {
+            mainView.router.loadPage('#camera');
+        }
     }
 })();
